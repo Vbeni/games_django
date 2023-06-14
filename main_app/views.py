@@ -10,3 +10,12 @@ class Home(TemplateView):
 class About(TemplateView):
     template_name = "about.html"
 
+class Games:
+    def __init__(self, name, image, description):
+        self.name = name
+        self.image = image
+        self.description = description
+
+games = [
+    
+]
