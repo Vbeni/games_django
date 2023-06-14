@@ -24,6 +24,12 @@ class Game:
         self.image = image
         self.description = description
 
+class Character:
+    def __init__(self, name, image, bio):
+        self.name= name
+        self.image = image 
+        self.bio = bio
+
 games = [
     Game("Super Mario 64", "https://images.igdb.com/igdb/image/upload/t_cover_big/co6cl1.png", 
        "The first three dimensional entry in the Mario franchise, Super Mario 64 follows Mario as he puts his broadened 3D movement arsenal to use in order to rescue Princess Peach from the clutches of his arch rival Bowser. Mario has to jump into worlds-within-paintings ornamenting the walls of Peach's castle, uncover secrets and hidden challenges and collect golden stars as reward for platforming trials."),
