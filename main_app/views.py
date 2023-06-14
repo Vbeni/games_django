@@ -24,11 +24,29 @@ class Game:
         self.image = image
         self.description = description
 
+class CharacterList(TemplateView):
+    template_name='character_list.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["characters"] = characters # this is where we add the key into our context object for the view to use
+        return context
+
+
 class Character:
     def __init__(self, name, image, bio):
         self.name= name
         self.image = image 
         self.bio = bio
+
+characters = [
+    Character("Mario", "http://www.game-art-hq.com/wp-content/uploads/2012/11/Super-Mario-Classic-Render.png", "Mario is a fictional character in the Mario video game franchise, owned by Nintendo and created by Japanese video game designer Shigeru Miyamoto."),
+    Character("Sonic", "http://www.game-art-hq.com/wp-content/uploads/Sonic_the_Hedgehog_Sonic_Boom-Render.png", "Sonic the Hedgehog is the protagonist of the Sonic the Hedgehog video game series released by Sega, as well as numerous spin-off comics, animations, and other media."),
+    Character("Pac-Man", "http://www.game-art-hq.com/wp-content/uploads/2014/06/Pac-Man-Screenshot-for-the-GA-HQ-Game-Character-DB.jpg", "Pac-Man is a character from the game series of the same name by Bandai Namco. He is considered one of the classics of the medium, virtually synonymous with video games."),
+    Character("Samus Aran", "http://www.game-art-hq.com/wp-content/uploads/Samus_Other_M_Artwork-.png", "Samus Aran is the protagonist of the Metroid science fiction action-adventure game series by Nintendo."),
+    Character("Link", "http://www.game-art-hq.com/wp-content/uploads/2015/11/Link-in-Majoras-Mask-Official-Art-Render.png", "Link is the main protagonist of Nintendo's video game series The Legend of Zelda. He appears in several incarnations over the course of the games, and also features in other Nintendo media."),
+    Character("Mega Man", "http://www.game-art-hq.com/wp-content/uploads/2014/04/Mega-Man-MM10-Official-Game-Render-Art.png", "Mega Man, known as Rockman in Japan, is the protagonist of the Mega Man series by Capcom."),
+]
 
 games = [
     Game("Super Mario 64", "https://images.igdb.com/igdb/image/upload/t_cover_big/co6cl1.png", 
