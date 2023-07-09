@@ -5,6 +5,8 @@ from django.views.generic.base import TemplateView
 # import models
 from .models import Game, Character
 from django.views.generic.edit import CreateView
+# after our other imports 
+from django.views.generic import DetailView
 
 
 # Create your views here.
@@ -38,7 +40,7 @@ class GameCreate(CreateView):
     fields = ['name', 'image', 'description']
     template_name = "game_create.html"
     success_url = "/games/"
-      
+
 # class Game:
 #     def __init__(self, name, image, description):
 #         self.name = name
@@ -53,6 +55,13 @@ class CharacterList(TemplateView):
         context["characters"] = Character.objects.all() # this is where we add the key into our context object for the view to use
         return context
 
+class CharacterDetail(DetailView):
+    model = Character
+    template_name = "character_detail.html"
+
+class GameDetail(DetailView):
+    model = Game
+    template_name = "game_detail.html"
 
 # class Character:
 #     def __init__(self, name, image, bio):

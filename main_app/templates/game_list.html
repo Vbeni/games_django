@@ -22,7 +22,7 @@
 <div class="gallery">
   <a class="button is-dark" href="{% url 'game_create' %}">Add Artist</a>
   {% for game in games %}
-  <a href="">
+  <a href="{% url 'game_detail' artist.pk %}">
     <div class="card">
       <div class="card-image">
         <figure class="image is-square">
