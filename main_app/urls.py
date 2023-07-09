@@ -14,5 +14,7 @@ urlpatterns = [
     path('games/<int:pk>/', views.GameDetail.as_view(), name="game_detail"),
     path('games/<int:pk>/update',views.GameUpdate.as_view(), name="game_update"),
     path('games/<int:pk>/delete',views.GameDelete.as_view(), name="game_delete"),
-    path('accounts/signup/', views.Signup.as_view(), name="signup"),
+    path('game_collections/<int:pk>/games/<int:game_pk>/', views.GameCollectionGameAssoc.as_view(), name="gamecollection_game_assoc"),
+    path('game_collections/<int:pk>/games/<int:game_pk>/add/', views.GameCollectionGameAssoc.as_view(), name="gamecollection_game_assoc_add"),
+    # path('accounts/signup/', views.Signup.as_view(), name="signup"),
 ]

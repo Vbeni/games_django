@@ -76,3 +76,109 @@ body {
   .detail__container {
     margin-top: 500px;
   }
+  .game {
+    width: 100%;
+    padding: 10px;
+    display: grid;
+    /*  New Template Columns  */
+    grid-template-columns: 0.1fr 3fr 0.5fr 0.3fr;
+    border-radius: 5px;
+  }
+
+  .detail__img {
+    position: relative; /* Updated */
+    width: 100%;
+    height: 500px;
+    background-color: #ffffff;
+    overflow: hidden;
+  }
+  
+  .detail__img::after {
+    content: "";
+    background-image: linear-gradient(transparent 60%, #1f1f1f);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+  }
+  
+  img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    object-position: top;
+  }
+  
+  .detail__name {
+    position: absolute;
+    z-index: 5;
+    top: 400px;
+    left: 40px; /* Adjusted */
+  }
+  
+  .detail__container {
+    margin-top: 500px;
+    padding: 40px; /* Added */
+    position: relative; /* Added */
+  }
+  
+  .detail__characters {
+    margin-bottom: 40px; /* Added */
+  }
+  
+  .character {
+    display: flex; /* Added */
+    align-items: center; /* Added */
+    justify-content: space-between; /* Added */
+    margin-bottom: 10px; /* Added */
+  }
+  
+  .character span:first-child {
+    margin-right: 10px; /* Added */
+  }
+  
+  .add-to-collection {
+    padding: 6px 10px;
+    background-color: #3273dc;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .add-to-collection:hover {
+    background-color: #2769c4;
+  }
+  
+  .dropdown-menu {
+    position: absolute;
+    display: none;
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    z-index: 10;
+    padding: 4px;
+    right: 0;
+    top: 100%;
+  }
+  
+  .dropdown-content {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  
+  .dropdown-item {
+    display: block;
+    padding: 4px;
+    color: #000000;
+    text-decoration: none;
+  }
+  
+  .dropdown-item:hover {
+    background-color: #f0f0f0;
+  }
+  

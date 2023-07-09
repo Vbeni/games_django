@@ -7,6 +7,7 @@ class Game(models.Model):
     image = models.URLField(max_length=1024)
     description = models.TextField()
 
+
     def __str__(self):
         return self.name
     
@@ -25,3 +26,10 @@ class Character(models.Model):
 
     class Meta:
         ordering = ['name']
+
+class GameCollection(models.Model):
+    title = models.CharField(max_length=150)
+    games = models.ManyToManyField(Game)
+
+    def __str__(self):
+        return self.title

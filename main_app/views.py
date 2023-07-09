@@ -1,9 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views import View #view class to handle requests 
 from django.http import HttpResponse
 from django.views.generic.base import TemplateView
 # import models
-from .models import Game, Character
+from .models import Game, Character, GameCollection
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 # after our other imports 
 from django.views.generic import DetailView
@@ -12,6 +12,10 @@ from django.views.generic import DetailView
 # Create your views here.
 class Home(TemplateView):
     template_name = "home.html"
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["gamecollection"] = GameCollection.objects.all()
+        return context
     
 class About(TemplateView):
     template_name = "about.html"
@@ -26,7 +30,7 @@ class GameList(TemplateView):
             context["games"] = Game.objects.filter(name__icontains=name)
         else:
             context["games"] = Game.objects.all()
-            context["header"] = "Character List"
+            context["header"] = "Game List"
         return context
 
 class CharacterCreate(CreateView):
@@ -63,9 +67,14 @@ class GameDetail(DetailView):
     model = Game
     template_name = "game_detail.html"
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["gamecollections"] = GameCollection.objects.all()
+        return context
+
 class CharacterUpdate(UpdateView):
     model = Character
-    fields = ['name', 'image', 'description']
+    fields = ['name', 'image', 'bio']
     template_name = "character_update.html"
     success_url = "/characters/"
 
@@ -82,6 +91,22 @@ class GameDelete(DeleteView):
     model = Game
     template_name = "game_delete_confirmation.html"
     success_url = "/games/"
+
+class GameCollectionGameAssoc(View):
+
+    def get(self, request, pk, game_pk):
+        # get the query param from the url
+        assoc = request.GET.get("assoc")
+        if assoc == "remove":
+            # get the GameCollection by the id and
+            # remove from the join table the given game_id
+            GameCollection.objects.get(pk=pk).games.remove(game_pk)
+        if assoc == "add":
+            # get the GameCollection by the id and
+            # add to the join table the given game_id
+            GameCollection.objects.get(pk=pk).games.add(game_pk)
+        return redirect('home')
+
 # class Character:
 #     def __init__(self, name, image, bio):
 #         self.name= name
