@@ -74,8 +74,14 @@ class GameUpdate(UpdateView):
     fields = ['name', 'image', 'description']
     template_name = "game_update.html"
     success_url = "/games/"
-
-
+class CharacterDelete(DeleteView):
+    model = Character
+    template_name = "character_delete_confirmation.html"
+    success_url = "/characters/"
+class GameDelete(DeleteView):
+    model = Game
+    template_name = "game_delete_confirmation.html"
+    success_url = "/games/"
 # class Character:
 #     def __init__(self, name, image, bio):
 #         self.name= name
