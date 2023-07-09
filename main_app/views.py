@@ -4,6 +4,8 @@ from django.http import HttpResponse
 from django.views.generic.base import TemplateView
 # import models
 from .models import Game, Character
+from django.views.generic.edit import CreateView
+
 
 # Create your views here.
 class Home(TemplateView):
@@ -24,7 +26,19 @@ class GameList(TemplateView):
             context["games"] = Game.objects.all()
             context["header"] = "Character List"
         return context
-    
+
+class CharacterCreate(CreateView):
+    model = Character
+    fields = ['name', 'image', 'bio']
+    template_name = "character_create.html"
+    success_url = "/characters/"
+
+class GameCreate(CreateView):
+    model = Game
+    fields = ['name', 'image', 'description']
+    template_name = "game_create.html"
+    success_url = "/games/"
+      
 # class Game:
 #     def __init__(self, name, image, description):
 #         self.name = name
