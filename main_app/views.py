@@ -4,7 +4,7 @@ from django.http import HttpResponse
 from django.views.generic.base import TemplateView
 # import models
 from .models import Game, Character
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 # after our other imports 
 from django.views.generic import DetailView
 
@@ -62,6 +62,19 @@ class CharacterDetail(DetailView):
 class GameDetail(DetailView):
     model = Game
     template_name = "game_detail.html"
+
+class CharacterUpdate(UpdateView):
+    model = Character
+    fields = ['name', 'image', 'description']
+    template_name = "character_update.html"
+    success_url = "/characters/"
+
+class GameUpdate(UpdateView):
+    model = Game
+    fields = ['name', 'image', 'description']
+    template_name = "game_update.html"
+    success_url = "/games/"
+
 
 # class Character:
 #     def __init__(self, name, image, bio):

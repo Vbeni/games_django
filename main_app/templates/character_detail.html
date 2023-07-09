@@ -8,12 +8,12 @@
 </div>
 <div class="detail__container">
     <div class="buttons">
-        <a href="{% url 'character_update' character.id %}" class="button is-info">
+        <a href="{% url 'character_update' character.pk %}" class="button is-info"> Updates
             <span class="icon">
                 <i class="fas fa-edit"></i>
             </span>
         </a>
-        <a href="{% url 'character_delete' character.id %}" class="button is-danger">
+        <a href="{% url 'character_delete' character.pk %}" class="button is-danger">
             <span class="icon">
                 <i class="fas fa-trash-alt"></i>
             </span>
