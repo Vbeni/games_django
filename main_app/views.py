@@ -40,12 +40,12 @@ class Character:
         self.bio = bio
 
 characters = [
-    Character("Mario", "http://www.game-art-hq.com/wp-content/uploads/2012/11/Super-Mario-Classic-Render.png", "Mario is a fictional character in the Mario video game franchise, owned by Nintendo and created by Japanese video game designer Shigeru Miyamoto."),
-    Character("Sonic", "http://www.game-art-hq.com/wp-content/uploads/Sonic_the_Hedgehog_Sonic_Boom-Render.png", "Sonic the Hedgehog is the protagonist of the Sonic the Hedgehog video game series released by Sega, as well as numerous spin-off comics, animations, and other media."),
-    Character("Pac-Man", "http://www.game-art-hq.com/wp-content/uploads/2014/06/Pac-Man-Screenshot-for-the-GA-HQ-Game-Character-DB.jpg", "Pac-Man is a character from the game series of the same name by Bandai Namco. He is considered one of the classics of the medium, virtually synonymous with video games."),
-    Character("Samus Aran", "http://www.game-art-hq.com/wp-content/uploads/Samus_Other_M_Artwork-.png", "Samus Aran is the protagonist of the Metroid science fiction action-adventure game series by Nintendo."),
-    Character("Link", "http://www.game-art-hq.com/wp-content/uploads/2015/11/Link-in-Majoras-Mask-Official-Art-Render.png", "Link is the main protagonist of Nintendo's video game series The Legend of Zelda. He appears in several incarnations over the course of the games, and also features in other Nintendo media."),
-    Character("Mega Man", "http://www.game-art-hq.com/wp-content/uploads/2014/04/Mega-Man-MM10-Official-Game-Render-Art.png", "Mega Man, known as Rockman in Japan, is the protagonist of the Mega Man series by Capcom."),
+    Character("Mario", "https://www.giantbomb.com/a/uploads/scale_small/15/153607/2895175-mario%2013.png", "Mario is a fictional character in the Mario video game franchise, owned by Nintendo and created by Japanese video game designer Shigeru Miyamoto."),
+    Character("Sonic", "https://www.giantbomb.com/a/uploads/scale_small/46/462814/3182258-4728507772-latest", "Sonic the Hedgehog is the protagonist of the Sonic the Hedgehog video game series released by Sega, as well as numerous spin-off comics, animations, and other media."),
+    Character("Pac-Man", "https://www.giantbomb.com/a/uploads/scale_medium/2/25631/1546400-pacman_1.jpg", "Pac-Man is a character from the game series of the same name by Bandai Namco. He is considered one of the classics of the medium, virtually synonymous with video games."),
+    Character("Samus Aran", "https://www.giantbomb.com/a/uploads/scale_small/16/164924/3445907-2936872287-samus.png", "Samus Aran is the protagonist of the Metroid science fiction action-adventure game series by Nintendo."),
+    Character("Link", "https://www.giantbomb.com/a/uploads/scale_small/15/153607/3294276-link.png", "Link is the main protagonist of Nintendo's video game series The Legend of Zelda. He appears in several incarnations over the course of the games, and also features in other Nintendo media."),
+    Character("Mega Man", "https://www.giantbomb.com/a/uploads/original/9/99864/2598105-3819367226-MegaM.jpg", "Mega Man, known as Rockman in Japan, is the protagonist of the Mega Man series by Capcom."),
 ]
 
 games = [
