@@ -2,6 +2,8 @@ from django.shortcuts import render
 from django.views import View #view class to handle requests 
 from django.http import HttpResponse
 from django.views.generic.base import TemplateView
+# import models
+from .models import Game, Character
 
 # Create your views here.
 class Home(TemplateView):
@@ -15,29 +17,29 @@ class GameList(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context["games"] = games # this is where we add the key into our context object for the view to use
+        context["games"] = Game.objects.all() # this is where we add the key into our context object for the view to use
         return context
     
-class Game:
-    def __init__(self, name, image, description):
-        self.name = name
-        self.image = image
-        self.description = description
+# class Game:
+#     def __init__(self, name, image, description):
+#         self.name = name
+#         self.image = image
+#         self.description = description
 
 class CharacterList(TemplateView):
     template_name='character_list.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context["characters"] = characters # this is where we add the key into our context object for the view to use
+        context["characters"] = Character.objects.all() # this is where we add the key into our context object for the view to use
         return context
 
 
-class Character:
-    def __init__(self, name, image, bio):
-        self.name= name
-        self.image = image 
-        self.bio = bio
+# class Character:
+#     def __init__(self, name, image, bio):
+#         self.name= name
+#         self.image = image 
+#         self.bio = bio
 
 characters = [
     Character("Mario", "https://www.giantbomb.com/a/uploads/scale_small/15/153607/2895175-mario%2013.png", "Mario is a fictional character in the Mario video game franchise, owned by Nintendo and created by Japanese video game designer Shigeru Miyamoto."),

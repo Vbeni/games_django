@@ -1,0 +1,8 @@
+-- INSERT INTO main_app_game(name, image, bio)
+--   VALUES
+--     ('Mario', 'https://www.giantbomb.com/a/uploads/scale_small/15/153607/2895175-mario%2013.png', 'Mario is a fictional character in the Mario video game franchise, owned by Nintendo and created by Japanese video game designer Shigeru Miyamoto.'),
+--     ('Sonic', 'https://www.giantbomb.com/a/uploads/scale_small/46/462814/3182258-4728507772-latest', 'Sonic the Hedgehog is the protagonist of the Sonic the Hedgehog video game series released by Sega, as well as numerous spin-off comics, animations, and other media.'),
+--     ('Pac-Man', 'https://www.giantbomb.com/a/uploads/scale_medium/2/25631/1546400-pacman_1.jpg', 'Pac-Man is a character from the game series of the same name by Bandai Namco. He is considered one of the classics of the medium, virtually synonymous with video games.'),
+--     ('Samus Aran', 'https://www.giantbomb.com/a/uploads/scale_small/16/164924/3445907-2936872287-samus.png', 'Samus Aran is the protagonist of the Metroid science fiction action-adventure game series by Nintendo.'),
+--     ('Link', 'https://www.giantbomb.com/a/uploads/scale_small/15/153607/3294276-link.png', 'Link is the main protagonist of Nintendo''s video game series The Legend of Zelda. He appears in several incarnations over the course of the games, and also features in other Nintendo media.'),
+--     ('Mega Man', 'https://www.giantbomb.com/a/uploads/original/9/99864/2598105-3819367226-MegaM.jpg', 'Mega Man, known as Rockman in Japan, is the protagonist of the Mega Man series by Capcom.');
